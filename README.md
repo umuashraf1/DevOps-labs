@@ -1,176 +1,166 @@
-🚀 DEVOPS LEARNING LAB 
-# 🚀 DevOps Learning Lab
+🚀 DevOps Learning Lab
+📌 Project Overview
 
-A hands-on DevOps project demonstrating a complete workflow using Windows tools (PowerShell + WSL + Docker Desktop + Git + GitHub).
+This project is a hands-on DevOps learning lab built using a Windows environment with WSL (Ubuntu), Git, GitHub, Docker Desktop, and Makefile automation.
 
-This project simulates real-world DevOps practices: environment setup, version control, containerization, automation, tagging, and deployment preparation.
+The objective was to simulate a real-world DevOps workflow by setting up a development environment, managing source code with Git, containerizing an application with Docker, automating repetitive tasks, and preparing the project for future CI/CD implementation.
 
----
+This repository demonstrates practical experience with modern DevOps tools and workflows commonly used in software development and cloud environments.
 
-## 👤 Author
-- **Name:** Ganiyat Adebayo  
-- **Role:** Aspiring DevOps Engineer  
-- **Focus Areas:** Cloud Infrastructure, Containerization, Automation, CI/CD
+👤 Author
 
----
+Ganiyat Adebayo
 
-# 🎯 Project Goals
+Aspiring DevOps Engineer with a background in customer support, data analysis, and cloud technologies.
 
-This project was built to practice:
+🎯 Project Objectives
 
-- Setting up a Windows-based DevOps environment
-- Installing and managing tools using `winget`
-- Using Git for version control
-- Running Docker via Docker Desktop
-- Automating tasks using Makefile
-- Simulating real deployment workflows
+This project was created to gain practical experience in:
 
----
-
-#  1. System Preparation (Windows)
-
-## 📌 Purpose
-Ensure all system tools are updated and ready for development.
-
-## 💻 Command
-
-```powershell
+Linux administration using WSL Ubuntu
+Git and GitHub workflows
+Docker containerization
+Development environment setup
+Release tagging and version control
+Build automation using Makefile
+DevOps best practices
+🛠️ Technologies Used
+Windows 10
+WSL 2 (Ubuntu)
+Git
+GitHub
+Docker Desktop
+Node.js
+Makefile
+Curl (via Winget)
+📊 Skills Demonstrated
+Version Control with Git
+GitHub Repository Management
+Linux Command Line
+Docker Image Creation
+Container Management
+Build Automation
+Release Management
+Troubleshooting and Environment Setup
+DevOps Workflow Fundamentals
+⚙️ Environment Setup (Windows + WSL)
+System Update (Windows tools)
 winget upgrade --all
- 2. Install Core Tools (Windows)
-📌 Purpose
-
-Install essential DevOps tools using Windows Package Manager.
-
-Git → version control
-Docker Desktop → container engine
-Curl → HTTP tool
-💻 Commands
+Install Required Tools
 winget install -e --id Git.Git
 winget install -e --id Docker.DockerDesktop
 winget install -e --id curl.curl
-✔ Verify Installation
-git --version
+Verify Installation
 docker --version
-👤 3. Configure Git Identity
-📌 Purpose
-
-Set global identity for tracking commits.
-
-💻 Commands
+git --version
+👤 Git Configuration
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 git config --list
-🌐 4. GitHub Repository Setup
-📌 Purpose
-
-Create a remote repository for backup and collaboration.
-
-Steps
-Create repository on GitHub
-Name: devops-lab
-Keep it public
+🌐 GitHub Repository Setup
+Go to GitHub
+Create new repository → devops-lab
+Make it Public
+Do NOT initialize README
 Copy repository URL
-🧪 5. Initialize Project
-📌 Purpose
-
-Create local project and connect it to GitHub.
-
-💻 Commands
+🧪 Project Setup
+Create Project Directory
 mkdir devops-lab
 cd devops-lab
-Create application
-echo console.log("Hello DevOps"); > app.js
 Initialize Git
 git init
 git branch -M main
+Create Application
+printf 'console.log("Hello DevOps World");\n' > app.js
+🔧 Git Workflow (Version Control)
+Initial Commit
 git add .
-git commit -m "initial project setup"
-Connect to GitHub
+git commit -m "Initial commit"
+Version Update Simulation
+echo 'v2' >> app.js
+
+git add .
+git commit -m "feat: bump to v2"
+
+git log --oneline
+🔗 Connect to GitHub
 git remote add origin https://github.com/YOUR-USERNAME/devops-lab.git
 git remote -v
-🐳 6. Containerize Application
-📌 Purpose
-
-Package application using Docker for consistent execution.
-
-💻 Create Dockerfile
-@"
-FROM node:18-alpine
-COPY app.js .
-CMD ["node","app.js"]
-"@ > Dockerfile
+🐳 Docker Containerization
+Create Dockerfile
+printf 'FROM node:18-alpine\nCOPY app.js .\nCMD ["node","app.js"]\n' > Dockerfile
 Build Image
-docker build -t devops-app .
+docker build -t devops-hello .
 Run Container
-docker run --rm devops-app
-🚀 7. Version Update Simulation
-📌 Purpose
-
-Simulate application updates using Git.
-
-💻 Commands
-echo version 2 >> app.js
-git add .
-git commit -m "update: second version added"
-git log --oneline
-⚙️ 8. Automation (Makefile)
-📌 Purpose
-
-Simplify Docker commands using automation.
-
-💻 Create Makefile (Windows safe)
-@"
-build:
-	docker build -t devops-app .
-
-run:
-	docker run --rm devops-app
-
-clean:
-	docker rmi devops-app
-"@ > Makefile
+docker run --rm devops-hello
+⚙️ Automation with Makefile
+Create Makefile
+printf 'build:\n\tdocker build -t devops-hello .\nrun:\n\tdocker run --rm devops-hello\nclean:\n\tdocker rmi devops-hello\n' > Makefile
 Run Automation
 make build
 make run
 make clean
-🏷️ 9. Release Tagging
-📌 Purpose
+🏷️ Release Management
 
-Mark stable version of project.
+A release tag was created to mark a stable version of the project.
 
-💻 Commands
+Commit Final Changes
 git add .
-git commit -m "finalize automation setup"
-git tag -a v1.0.0 -m "First stable DevOps release"
+git commit -m "feat: add Makefile automation"
+Create Release Tag
+git tag -a v1.0.0 -m "First stable release"
+Verify Tag
 git log --oneline --decorate
-🚀 10. Push to GitHub
-💻 Commands
+🚀 Publish to GitHub
 git push -u origin main
 git push origin v1.0.0
-📊 Skills Demonstrated
 
-✔ Windows DevOps environment setup
-✔ Git version control workflow
-✔ GitHub remote repository management
-✔ Docker containerization
-✔ Makefile automation
-✔ Release tagging and versioning
+📸 Screenshots
 
-💼 Why This Project Matters
+Add your screenshots here:
 
-This project demonstrates real-world DevOps fundamentals:
+VS Code connected to WSL
+Docker build process
+Running container
+GitHub repository
 
-Reproducible environments
-Container-based application delivery
-Version-controlled development workflow
-Automation of repetitive tasks
-Release management practices
+🔍 Challenges Encountered
+Git not recognized
+Fixed by installing Git and restarting terminal
+Docker permission issues
+Resolved by verifying WSL integration and Docker Desktop
+VS Code WSL confusion
+Fixed by explicitly opening project in Ubuntu WSL environment
 📈 Future Improvements
-Add CI/CD using GitHub Actions
-Deploy container to cloud (AWS / Azure)
-Replace Node script with REST API
-Add monitoring and logging
-Add Kubernetes deployment
-🎯 Conclusion
+GitHub Actions CI/CD pipeline
+Docker Hub image publishing
+AWS deployment
+Kubernetes orchestration
+Terraform Infrastructure as Code
+Monitoring and logging
+💼 Recruiter Takeaway
 
-This project represents a complete DevOps workflow from setup to containerized deployment, built using Windows-based tools and industry-standard practices.
+This project demonstrates hands-on DevOps experience with:
+
+Linux (WSL Ubuntu)
+Git & GitHub workflows
+Docker containerization
+Build automation using Makefile
+Release versioning
+Environment troubleshooting
+
+It serves as a foundational DevOps portfolio project and prepares for advanced CI/CD and cloud deployment workflows.
+
+📜 Version
+
+Current Release: v1.0.0
+Last Updated: June 2026
+
+⭐ Final Note
+
+This project was developed as a practical DevOps learning exercise combining Windows tools and Linux (WSL Ubuntu) to simulate a real-world engineering workflow.
+Last Updated: June 2026
+
+⭐ Final Note
+
+This project was developed as a practical DevOps learning exercise combining Windows tools and Linux (WSL Ubuntu) to simulate a real-world engineering workflow.s-based tools and industry-standard practices.
