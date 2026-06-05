@@ -115,14 +115,7 @@ git log --oneline --decorate
 git push -u origin main
 git push origin v1.0.0
 
-📸 Screenshots
 
-Add your screenshots here:
-
-VS Code connected to WSL
-Docker build process
-Running container
-GitHub repository
 
 🔍 Challenges Encountered
 Git not recognized
