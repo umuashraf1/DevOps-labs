@@ -3,9 +3,12 @@
 
 This project is a hands-on DevOps learning lab built using a Windows environment with WSL (Ubuntu), Git, GitHub, Docker Desktop, and Makefile automation.
 
+
 The objective was to simulate a real-world DevOps workflow by setting up a development environment, managing source code with Git, containerizing an application with Docker, automating repetitive tasks, and preparing the project for future CI/CD implementation.
 
+
 This repository demonstrates practical experience with modern DevOps tools and workflows commonly used in software development and cloud environments.
+
 
 👤 Author
 
@@ -13,17 +16,26 @@ Ganiyat Adebayo
 
 Aspiring DevOps Engineer with a background in customer support, data analysis, and cloud technologies.
 
+
 🎯 Project Objectives
 
 This project was created to gain practical experience in:
 
 Linux administration using WSL Ubuntu
+
 Git and GitHub workflows
+
 Docker containerization
+
 Development environment setup
+
 Release tagging and version control
+
 Build automation using Makefile
+
 DevOps best practices
+
+
 🛠️ Technologies Used
 Windows 10
 WSL 2 (Ubuntu)
@@ -33,6 +45,8 @@ Docker Desktop
 Node.js
 Makefile
 Curl (via Winget)
+
+
 📊 Skills Demonstrated
 Version Control with Git
 GitHub Repository Management
@@ -43,26 +57,33 @@ Build Automation
 Release Management
 Troubleshooting and Environment Setup
 DevOps Workflow Fundamentals
+
+
 ⚙️ Environment Setup (Windows + WSL)
 System Update (Windows tools)
 winget upgrade --all
+
 Install Required Tools
 winget install -e --id Git.Git
 winget install -e --id Docker.DockerDesktop
 winget install -e --id curl.curl
+
 Verify Installation
 docker --version
 git --version
+
 👤 Git Configuration
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 git config --list
+
 🌐 GitHub Repository Setup
 Go to GitHub
 Create new repository → devops-lab
 Make it Public
 Do NOT initialize README
 Copy repository URL
+
 🧪 Project Setup
 Create Project Directory
 mkdir devops-lab
@@ -72,6 +93,8 @@ git init
 git branch -M main
 Create Application
 printf 'console.log("Hello DevOps World");\n' > app.js
+
+
 🔧 Git Workflow (Version Control)
 Initial Commit
 git add .
@@ -86,6 +109,8 @@ git log --oneline
 🔗 Connect to GitHub
 git remote add origin https://github.com/YOUR-USERNAME/devops-lab.git
 git remote -v
+
+
 🐳 Docker Containerization
 Create Dockerfile
 printf 'FROM node:18-alpine\nCOPY app.js .\nCMD ["node","app.js"]\n' > Dockerfile
@@ -93,6 +118,8 @@ Build Image
 docker build -t devops-hello .
 Run Container
 docker run --rm devops-hello
+
+
 ⚙️ Automation with Makefile
 Create Makefile
 printf 'build:\n\tdocker build -t devops-hello .\nrun:\n\tdocker run --rm devops-hello\nclean:\n\tdocker rmi devops-hello\n' > Makefile
@@ -100,6 +127,8 @@ Run Automation
 make build
 make run
 make clean
+
+
 🏷️ Release Management
 
 A release tag was created to mark a stable version of the project.
@@ -124,6 +153,8 @@ Docker permission issues
 Resolved by verifying WSL integration and Docker Desktop
 VS Code WSL confusion
 Fixed by explicitly opening project in Ubuntu WSL environment
+
+
 📈 Future Improvements
 GitHub Actions CI/CD pipeline
 Docker Hub image publishing
@@ -131,6 +162,8 @@ AWS deployment
 Kubernetes orchestration
 Terraform Infrastructure as Code
 Monitoring and logging
+
+
 💼 Recruiter Takeaway
 
 This project demonstrates hands-on DevOps experience with:
